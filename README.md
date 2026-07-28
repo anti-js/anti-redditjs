@@ -6,7 +6,7 @@ A browser extension that gets rid of Reddit's annoying NSFW blocking modal, vide
 
 | Without Extension | With Extension |
 |:---:|:---:|
-| ![Blocked](screenshots/post-blocked.png) | ![Unblocked](screenshots/reddit-blocked.png) |
+| ![Blocked](screenshots/reddit-blocked.png) | ![Unblocked](screenshots/js-removed.png) |
 
 ## What it does
 
