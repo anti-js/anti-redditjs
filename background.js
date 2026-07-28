@@ -1,3 +1,8 @@
+// Firefox compatibility — Firefox uses `browser` instead of `chrome`
+if (typeof chrome === "undefined" && typeof browser !== "undefined") {
+  globalThis.chrome = browser;
+}
+
 // Background service worker — manages extension state and blocked counter
 
 const DEFAULT_STATE = {

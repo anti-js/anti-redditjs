@@ -1,3 +1,8 @@
+// Firefox compatibility — Firefox uses `browser` instead of `chrome`
+if (typeof chrome === "undefined" && typeof browser !== "undefined") {
+  globalThis.chrome = browser;
+}
+
 // Popup script — manages UI state and communicates with background/content
 
 const DEFAULTS = {
