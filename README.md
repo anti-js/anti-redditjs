@@ -2,6 +2,12 @@
 
 A browser extension that gets rid of Reddit's annoying NSFW blocking modal, video blur overlays, and sidebar spam — so you can actually read posts without logging in or jumping through hoops.
 
+## Showcase
+
+| Without Extension | With Extension |
+|:---:|:---:|
+| ![Blocked](screenshots/post-blocked.png) | ![Unblocked](screenshots/reddit-blocked.png) |
+
 ## What it does
 
 - **Removes the NSFW age verification modal** — that "I am over 18" popup that blocks you from reading posts? Gone. Instantly.
