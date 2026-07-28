@@ -22,13 +22,16 @@ A browser extension that gets rid of Reddit's annoying NSFW blocking modal, vide
 5. Pick the folder you downloaded
 6. Go to any NSFW Reddit post — the blocking stuff is gone
 
-## How to install (Firefox)
+## How to install (Firefox / LibreWolf)
 
 1. Download or clone this repo
-2. Open `about:debugging#/runtime/this-firefox`
-3. Click **Load Temporary Add-on**
-4. Select the `manifest.json` file from the folder
-5. Done — visit any NSFW Reddit post
+2. Zip the contents of the folder (the `manifest.json` must be at the root of the zip, not inside a subfolder)
+3. Open `about:debugging#/runtime/this-firefox`
+4. Click **Load Temporary Add-on**
+5. Select the `.zip` file you created
+6. Done — visit any NSFW Reddit post
+
+> **Note for Flatpak users:** If you're running Firefox or LibreWolf as a Flatpak, loading `manifest.json` directly won't work due to sandbox restrictions. Use the `.zip` method above instead.
 
 ## Using the popup
 
@@ -53,8 +56,15 @@ All settings are saved automatically and apply immediately — no reload needed.
 - `popup.html` / `popup.css` / `popup.js` — Popup UI with toggles, slider, and counter
 - `icons/` — Extension icons
 
+## Tested on
+
+- **Google Chrome** — works
+- **Brave** — works
+- **Mozilla Firefox** — works
+- **LibreWolf** — works (load via zip if using Flatpak)
+
 ## Notes
 
 - This is for personal use. It bypasses Reddit's age verification, so use it responsibly.
 - Reddit may change their DOM structure at any time, which could break the extension. If something stops working, check back for updates.
-- Works on Chromium-based browsers (Chrome, Brave, Edge) and Firefox.
+- Works on Chromium-based browsers (Chrome, Brave, Edge) and Firefox/LibreWolf.
