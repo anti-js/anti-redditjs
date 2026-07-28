@@ -21,20 +21,9 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "anti-redditjs@anti-js.github.io",
-      "strict_min_version": "109.0",
+      "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": {
-          "techdata_collected": false,
-          "interactiondata_collected": false,
-          "webactivitydata_collected": false,
-          "personallyidentifyinginfo_collected": false,
-          "nonpersonalinfo_collected": false,
-          "financialinfo_collected": false,
-          "financialandpaymentinfo_collected": false,
-          "healthinfo_collected": false,
-          "locationinfo_collected": false,
-          "personalcommunications_collected": false
-        }
+        "required": []
       }
     }
   },
