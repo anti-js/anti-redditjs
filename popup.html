@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>Anti RedditJS</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" fill="#FF4500"/>
+          <circle cx="7" cy="8.5" r="1.2" fill="#fff"/>
+          <circle cx="13" cy="8.5" r="1.2" fill="#fff"/>
+          <path d="M6.5 12 Q10 14.5 13.5 12" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h1>Anti RedditJS</h1>
+      </div>
+      <p class="subtitle">Reddit blocking remover</p>
+    </header>
+
+    <!-- Master toggle -->
+    <div class="section">
+      <label class="switch-label">
+        <span>Extension</span>
+        <div class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider"></span>
+        </div>
+      </label>
+      <p class="toggle-status" id="toggleStatus">Active</p>
+    </div>
+
+    <!-- Feature toggles -->
+    <div class="section">
+      <h2 class="section-title">Features</h2>
+      <label class="switch-label">
+        <span>Remove NSFW modals</span>
+        <div class="switch">
+          <input type="checkbox" id="modalToggle">
+          <span class="slider"></span>
+        </div>
+      </label>
+      <label class="switch-label">
+        <span>Unblur NSFW videos</span>
+        <div class="switch">
+          <input type="checkbox" id="videoToggle">
+          <span class="slider"></span>
+        </div>
+      </label>
+      <label class="switch-label">
+        <span>Remove sidebar banner</span>
+        <div class="switch">
+          <input type="checkbox" id="sidebarToggle">
+          <span class="slider"></span>
+        </div>
+      </label>
+    </div>
+
+    <!-- Layout options -->
+    <div class="section">
+      <h2 class="section-title">Layout</h2>
+      <div class="slider-group">
+        <label class="slider-label">Left offset</label>
+        <div class="slider-row">
+          <input type="range" id="leftOffset" min="0" max="400" step="10" value="60">
+          <span class="slider-value" id="leftOffsetValue">0px</span>
+        </div>
+        <p class="slider-hint">Distance from left edge to main content</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="section stats-section">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.68.94 6.36 2.64"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value" id="blockedCount">0</span>
+          <span class="stat-label">Blocks Bypassed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button id="resetBtn" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        Reset Counter
+      </button>
+    </div>
+
+    <footer>
+      <p>v1.2.0</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

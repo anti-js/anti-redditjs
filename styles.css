@@ -1,0 +1,86 @@
+/* ============================================
+   NSFW Bypass — Feature-conditional CSS rules
+   ============================================
+   Attributes on <html>:
+     data-nsfw-bypass="on"    — master toggle
+     data-nsfw-modal="on"     — remove NSFW modals
+     data-nsfw-video="on"     — unblur NSFW videos
+     data-nsfw-sidebar="on"   — remove sidebar banner
+   CSS variable:
+     --nsfw-left-offset       — left offset for main content
+   ============================================ */
+
+/* --- Modal removal (feature: data-nsfw-modal) --- */
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] configured-xpromo-modal,
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[blocking],
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[dialog-id^="configured-xpromo-blocking_xpromo_nsfw"],
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] protected-community-modal,
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] #blocking-modal-contents,
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] div.rpl-dialog.configured-xpromo-modal,
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] div[id^="configured-xpromo-blocking_xpromo_nsfw"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Also hide the modal card itself if it appears outside our container */
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] div.rpl-dialog.configured-xpromo-modal rpl-modal-card,
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] div[id^="configured-xpromo-blocking_xpromo_nsfw"] rpl-modal-card {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide the shadow DOM overlay/panel that can flash before JS removal */
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[blocking]::part(overlay),
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[blocking]::part(panel),
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[dialog-id^="configured-xpromo-blocking_xpromo_nsfw"]::part(overlay),
+html[data-nsfw-bypass="on"][data-nsfw-modal="on"] rpl-dialog[dialog-id^="configured-xpromo-blocking_xpromo_nsfw"]::part(panel) {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* --- Video unblurring (feature: data-nsfw-video) --- */
+html[data-nsfw-bypass="on"][data-nsfw-video="on"] img.post-background-image-filter {
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* --- Sidebar removal (feature: data-nsfw-sidebar) --- */
+html[data-nsfw-bypass="on"][data-nsfw-sidebar="on"] #left-sidebar-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* --- Scroll lock removal (always active when extension is on) --- */
+html[data-nsfw-bypass="on"] body.rpl-scroll-lock {
+  overflow: auto !important;
+  position: static !important;
+}
+
+/* Hide the data protection consent sheet */
+html[data-nsfw-bypass="on"] rpl-dialog-sheet#data-protection-consent-sheet {
+  display: none !important;
+}
+
+/* Ensure the main content is visible and interactive */
+html[data-nsfw-bypass="on"] main#main-content {
+  pointer-events: auto !important;
+}
+
+/* --- Layout expansion (always active when extension is on) --- */
+html[data-nsfw-bypass="on"] .grid-container {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-nsfw-bypass="on"] .subgrid-container {
+  grid-column-start: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: var(--nsfw-left-offset, 0px) !important;
+}
