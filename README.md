@@ -30,6 +30,8 @@ A browser extension that gets rid of Reddit's annoying NSFW blocking modal, vide
 
 ## How to install (Firefox / LibreWolf)
 
+https://addons.mozilla.org/en-US/firefox/addon/anti-redditjs/
+
 1. Download or clone this repo
 2. Zip the contents of the folder (the `manifest.json` must be at the root of the zip, not inside a subfolder)
 3. Open `about:debugging#/runtime/this-firefox`
